@@ -1,0 +1,30 @@
+service: sootam-login
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ap-northeast-2
+functions:
+  login:
+    handler: index.handler
+    events:
+      - httpApi:
+          path: /signUp
+          method: post
+      - httpApi:
+          path: /signIn
+          method: post
+      - httpApi:
+          path: /socialLogin
+          method: get
+
+plugins:
+  - serverless-latest-layer-version
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    httpPort: 3001
+    babelOptions:
+      presets: ["env"]

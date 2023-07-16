@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "serverless-latest-layer-version": "^2.1.2",
+    "serverless-offline": "^12.0.4"
+  },
+  "dependencies": {
+    "firebase": "^10.0.0"
+  },
+  "scripts": {
+    "start": "sls offline start"
+  },
+  "type": "module"
+}
