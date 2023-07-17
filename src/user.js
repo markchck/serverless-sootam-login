@@ -10,8 +10,6 @@ export const signUp = async (event) => {
 }
 
 export const signIn = async (event) => {
-  // console.log(event)
-  console.log(process.env)
   const body = JSON.parse(event.body.toString("utf-8"))
   const { userEmail = "", password = "" } = body
   const user = await login(userEmail, password)
