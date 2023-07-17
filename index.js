@@ -17,7 +17,6 @@ export const handler = async (event) => {
       default:
         throw new Error(`Unsupported route: "${event.routeKey}"`)
     }
-    console.log(response)
     return response
   } catch (error) {
     console.log(error)
