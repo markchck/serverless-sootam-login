@@ -6,6 +6,26 @@ provider:
   stage: dev
   runtime: nodejs18.x
   region: ap-northeast-2
+  httpApi:
+    cors:
+      allowCredentials: true
+      allowedOrigins:
+        - http://localhost:8080
+        - http://sootam.com
+      allowedHeaders:
+        - Content-Type
+        - Authorization
+        - Access-Control-Allow-Headers
+        - Access-Control-Allow-Origin
+        - Access-Control-Allow-Methods
+      allowedMethods:
+        - OPTIONS
+        - GET
+        - POST
+        - PUT
+        - PATCH
+        - DELETE
+
 functions:
   login:
     handler: index.handler
