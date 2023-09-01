@@ -36,9 +36,6 @@ functions:
       - httpApi:
           path: /signIn
           method: post
-      - httpApi:
-          path: /socialLogin
-          method: get
 
 plugins:
   - serverless-latest-layer-version

@@ -1,4 +1,4 @@
-import { register, login, socialLogin } from "../lib/firebase.js"
+import { register, login } from "../lib/firebase.js"
 export const signUp = async (event) => {
   // console.log(event)
   try {
@@ -23,16 +23,5 @@ export const signIn = async (event) => {
   return {
     statusCode: 200,
     body: user,
-  }
-}
-
-export const getUserBySocialLogin = async (event) => {
-  const { user = "", token = "" } = await socialLogin()
-  return {
-    statusCode: 200,
-    body: {
-      user: user,
-      token: token,
-    },
   }
 }

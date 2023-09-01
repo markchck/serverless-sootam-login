@@ -11,9 +11,6 @@ export const handler = async (event) => {
       case "POST /signIn":
         response = await signIn(event)
         break
-      case "GET /socialLogin":
-        response = await getUserBySocialLogin(event)
-        break
       default:
         throw new Error(`Unsupported route: "${event.routeKey}"`)
     }
@@ -21,7 +18,7 @@ export const handler = async (event) => {
   } catch (error) {
     console.log(error)
     return {
-      statusCode: 500,
+      statusCode: 400,
       body: JSON.stringify(error.message),
     }
   }
